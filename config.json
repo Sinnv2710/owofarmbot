@@ -3,8 +3,8 @@
         "huntandbattle": "true",
         "banbypass": "true",
         "discordrpc": "true",
-        "pray": "false",
-        "curse": "false",
+        "pray": "true",
+        "curse": "true",
         "autoquest": "true",
         "extratoken": "false",
         "inventory": {
@@ -16,7 +16,7 @@
             "eventcheck": "true"
         },
         "animals": {
-            "enable": "false",
+            "enable": "true",
             "type": "sacrifice",
             "animaltype": {
                 "common": "true",
@@ -36,7 +36,7 @@
             }
         },
         "upgradeautohunt": {
-            "enable": "false",
+            "enable": "true",
             "type": "duration"
         },
         "gamble": {
@@ -45,17 +45,17 @@
                 "amount": "1"
             },
             "slots": {
-                "enable": "false",
-                "amount": "1"
+                "enable": "true",
+                "amount": "5000"
             }
         }
     },
     "main": {
-        "token": "",
-        "userid": "",
-        "channelid": "",
-        "owodmchannelid": "",
-        "autoquestchannelid": ""
+        "token": "MTA3NjU1NzE4ODQ1NTIxNTEzNA.GNxrPI.QoMR1rJMzJG3BlNpjnxwyl3jUzo4IcvbdV4mlo",
+        "userid": "1076557188455215134",
+        "channelid": "1159419740528332891",
+        "owodmchannelid": "1163754631839617064",
+        "autoquestchannelid": "1164593408195711016"
     },
     "extra": {
         "token": "",

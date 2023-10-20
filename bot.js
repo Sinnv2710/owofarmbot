@@ -187,7 +187,7 @@ setTimeout(() => {
     socketio.emit("bot", {
         info: `Hunt and Battle: ${rpchab} BanBypass: ${rpcbanb} Inventory Check: ${rpcinventory} Animals: ${rpcanimals}`,
     });
-}, 2500);
+}, 10000);
 
 rpc.on("ready", () => {
     console.log(chalk.blue("Discord RPC Started!"));
@@ -393,7 +393,7 @@ if (extratokencheck == "true") {
                         setTimeout(() => {
                             sleepy("Extra", "CheckList");
                         }, 5000);
-                    }, 3500);
+                    }, 10000);
                     if (settings.huntandbattle == "true") {
                         setTimeout(() => {
                             hunt(
@@ -454,10 +454,10 @@ if (extratokencheck == "true") {
 setInterval(() => {
     var timehunt = parseInt(rantime());
     if (timehunt <= 5000) {
-        timehunt = timehunt + 2000;
+        timehunt = timehunt + 10000;
     }
 
-    var timebattle = timehunt + 1000;
+    var timebattle = timehunt + 8000;
     if (settings.banbypass == "true") {
         bancheck(maintoken, mainchannelid);
         dmbancheck(maintoken, owodmmainchannelid);
@@ -469,13 +469,13 @@ setInterval(() => {
                 if (settings.inventory.inventorycheck == "true") {
                     setTimeout(() => {
                         checkinv(maintoken, mainchannelid, "Main Token");
-                    }, 2500);
+                    }, 10000);
                 }
             }, timehunt);
 
             setTimeout(() => {
                 battle(maintoken, timebattle, "Main Token", mainchannelid);
-            }, timebattle + 1500);
+            }, timebattle + 8000);
         }
     }
 }, 17000);
@@ -484,10 +484,10 @@ if (global.etoken) {
     setInterval(() => {
         var timehunt = parseInt(rantime());
         if (timehunt <= 5000) {
-            timehunt = timehunt + 2000;
+            timehunt = timehunt + 10000;
         }
 
-        var timebattle = timehunt + 1000;
+        var timebattle = timehunt + 8000;
         if (settings.banbypass == "true") {
             extrabancheck(extratoken, extrachannelid);
             dmextrabancheck(extratoken, owodmextrachannelid);
@@ -499,7 +499,7 @@ if (global.etoken) {
                     if (settings.inventory.inventorycheck == "true") {
                         setTimeout(() => {
                             checkinv(extratoken, extrachannelid, "Extra Token");
-                        }, 2500);
+                        }, 10000);
                     } //E <3
                 }, timehunt);
 
@@ -528,7 +528,7 @@ if (settings.animals.enable == "true") {
                 settings.animals.type
             );
         }
-    }, 1200000);
+    }, 11000000);
 }
 
 //--------------------------------PRAY-------------------------------------------------//
@@ -547,7 +547,7 @@ if (settings.curse == "true") {
         if (global.etoken) {
             curse(extratoken, "Extra Token", extrachannelid);
         }
-    }, 303500);
+    }, 3010000);
 }
 //--------------------------------UPGRADE-------------------------------------------------//
 if (settings.upgradeautohunt.enable == "true") {
@@ -566,7 +566,7 @@ if (settings.gamble.coinflip.enable == "true") {
         if (global.etoken) {
             coinflip(extratoken, "Extra Token", extrachannelid);
         }
-    }, 20000);
+    }, 100000);
 }
 
 if (settings.gamble.slots.enable == "true") {
@@ -695,7 +695,7 @@ async function updatechecklistsocket(i, e) {
             name: i,
             status: e,
         });
-    }, 3000);
+    }, 10000);
 }
 
 async function updateerrorsocket(eyl) {
@@ -993,7 +993,7 @@ function checklist(token, tokentype, channelid) {
                         }
                     }
                 );
-            }, 2000);
+            }, 10000);
         }
     );
 }
@@ -1318,7 +1318,7 @@ function dmbancheck(token, channelid) {
 
                     setTimeout(() => {
                         sleepy("Main", "Dm Captcha");
-                    }, 2000);
+                    }, 10000);
                 }
             }
         }
@@ -1376,7 +1376,7 @@ function dmextrabancheck(token, channelid) {
                     );
                     setTimeout(() => {
                         sleepy("Extra", "DM Captcha");
-                    }, 2000);
+                    }, 10000);
                 }
             }
         }
@@ -1745,7 +1745,7 @@ function getinv(token, channelid, tokentype, gemc, collectc) {
                     if (cont.includes("`050`")) {
                         setTimeout(() => {
                             boxuse(token, "lootbox all", channelid, tokentype);
-                        }, 2000);
+                        }, 10000);
                     }
                 }
 
@@ -1758,7 +1758,7 @@ function getinv(token, channelid, tokentype, gemc, collectc) {
                                 channelid,
                                 tokentype
                             );
-                        }, 2000);
+                        }, 10000);
                     }
                 }
 
@@ -1766,7 +1766,7 @@ function getinv(token, channelid, tokentype, gemc, collectc) {
                     if (cont.includes("`100`")) {
                         setTimeout(() => {
                             boxuse(token, "crate all", channelid, tokentype);
-                        }, 2000);
+                        }, 10000);
                     }
                 }
 
@@ -1775,29 +1775,29 @@ function getinv(token, channelid, tokentype, gemc, collectc) {
                         // valentines day
                         setTimeout(() => {
                             eventuse(token, "18", channelid, tokentype);
-                        }, 2000); //E <3
+                        }, 10000); //E <3
                     }
                     if (cont.includes("`019`")) {
                         // anniversary day
                         setTimeout(() => {
                             eventuse(token, "19", channelid, tokentype);
-                        }, 2000);
+                        }, 10000);
                     }
                     if (cont.includes("`020`")) {
                         // fakelootbox
                         setTimeout(() => {
                             eventuse(token, "20", channelid, tokentype);
-                        }, 2000);
+                        }, 10000);
                     }
                     if (cont.includes("`23`")) {
                         setTimeout(() => {
                             eventuse(token, "23", channelid, tokentype);
-                        }, 2000);
+                        }, 10000);
                     }
                 }
             }
         );
-    }, 3000);
+    }, 10000);
 }
 
 function gemuse(token, gem, channelid, tokentype) {
@@ -1916,7 +1916,7 @@ async function getquests(token, channelid, tokentype) {
             },
         },
         async function (error, response, body) {
-            await delay(3500);
+            await delay(10000);
             request.get(
                 {
                     headers: {
@@ -1931,7 +1931,7 @@ async function getquests(token, channelid, tokentype) {
                     try {
                         var bod = JSON.parse(body);
                         var cont = bod[0].embeds;
-                        await delay(2500);
+                        await delay(5000);
                         console.log(
                             chalk.red(
                                 `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`
@@ -2149,7 +2149,7 @@ async function questsayowo(token, channelid, pro1, pro2) {
         await delay(32500);
         for (let sayowoelaina = 0; sayowoelaina < 4; sayowoelaina++) {
             elaina2(token, channelid);
-            await delay(2000);
+            await delay(10000);
         }
     }
     global.quest = true;
@@ -2182,7 +2182,7 @@ async function questcurseme(token, userid, channelid, pro1, pro2) {
         var socketp = pro1;
         var socketpro1 = socketp++;
         updatequestssocket(socketpro1, pro2);
-        await delay(302000);
+        await delay(3010000);
     }
     global.quest = true;
     getquests(token, channelid);
@@ -2208,7 +2208,7 @@ async function questprayme(token, userid, channelid, pro1, pro2) {
         var socketp = pro1;
         var socketpro1 = socketp++;
         updatequestssocket(socketpro1, pro2);
-        await delay(302000);
+        await delay(3010000);
     }
     global.quest = true;
     getquests(token, channelid);
@@ -2309,7 +2309,7 @@ async function questcookiefriend(token, userid, channelid, pro1, pro2) {
         var socketp = pro1;
         var socketpro1 = socketp++;
         updatequestssocket(socketpro1, pro2);
-        await delay(302000);
+        await delay(3010000);
     }
     global.quest = true;
     getquests(token, channelid);
